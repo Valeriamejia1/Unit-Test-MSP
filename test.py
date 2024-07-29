@@ -5,9 +5,9 @@ class TestExcel(unittest.TestCase):
     def assertCellEqual(self, original_cell, new_cell, location):
         self.assertEqual(original_cell.value, new_cell.value, f"Cell value at {location} is different")
 
-    def test_AH(self):
-        original_file_path = "C:\\Python tools\\Unit-Test-MSP\\Original Files\\## ##.xlsx"
-        new_file_path = "C:\\Python tools\\Unit-Test-MSP\\New files\\Astria Health\\## ##.xlsx"
+    def test_UWA(self):
+        original_file_path = "C:\\Python tools\\Unit-Test-MSP\\Original Files\\UWA Invoice-4185038 ORIG.xlsx"
+        new_file_path = "C:\\Python tools\\Unit-Test-MSP\\New files\\University of Washington Medical Center\\Invoice-4185038.xlsx"
 
         original_wb = load_workbook(filename=original_file_path)
         new_wb = load_workbook(filename=new_file_path)
