@@ -5,9 +5,9 @@ class TestExcel(unittest.TestCase):
     def assertCellEqual(self, original_cell, new_cell, location):
         self.assertEqual(original_cell.value, new_cell.value, f"Cell value at {location} is different")
    
-    def test_CHN(self):
-        original_file_path = "C:\\Python tools\\Unit-Test-MSP\\Original Files\\CHN - Invoice - # 10223952 L&D CST NIGHTS.xlsx"
-        new_file_path = "C:\\Python tools\\Unit-Test-MSP\\New files\\Community Health Network\\Invoice - # 10223952 L&D CST NIGHTS.xlsx"
+    def test_UNM(self):
+        original_file_path = "C:\\Python tools\\Unit-Test-MSP\\Original Files\\10225354 - COH - Santa Barbara Cottage Hospital.xlsx"
+        new_file_path = "C:\\Python tools\\Unit-Test-MSP\\New files\\Cottage Health\\10225354 - Santa Barbara Cottage Hospital.xlsx"
 
         original_wb = load_workbook(filename=original_file_path)
         new_wb = load_workbook(filename=new_file_path)
@@ -32,7 +32,7 @@ class TestExcel(unittest.TestCase):
                         self.assertCellEqual(original_cell, new_cell, location)
                     except AssertionError as e:
                         differences_found.append(str(e))
-                        
+
         if differences_found:
             self.fail("\n".join(differences_found))
 
